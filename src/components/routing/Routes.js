@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
-import DashboardHomeContainer from "../dashboardHome/dashboardHomeContainer/dashboardHomeContainer";
+import DashboardHomeContainer from "../dashboardHome/DashboardHomeContainer/DashboardHomeContainer";
 import InvoicesContainer from "../invoices/invoicesContainer/invoicesContainer";
 import ExchangeContainer from "../exchange/exchangeContainer/exchangeContainer";
 import UserContainer from "../user/userContainer/userContainer";
