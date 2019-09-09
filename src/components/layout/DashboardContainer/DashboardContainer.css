@@ -1,0 +1,16 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 5rem auto;
+  grid-gap: 0rem;
+  padding: 0rem;
+  line-height: 1.8rem;
+  background: #f8fcff;
+}
+
+.dashboard-container-position {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
