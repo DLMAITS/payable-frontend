@@ -14,7 +14,8 @@
   font-size: 24px;
   color: #25274d;
   font-style: normal;
-  border-right: 2px solid #25274d;
+  display: inline-block;
+  width: 200px;
 }
 
 .navbar-header {
@@ -22,7 +23,9 @@
   font-size: 18px;
   font-style: normal;
   padding-right: 20px;
+  padding-left: 20px;
   color: #a8d0e6;
+  border-left: 1px solid black;
 }
 
 .navbar-hyperlink {
