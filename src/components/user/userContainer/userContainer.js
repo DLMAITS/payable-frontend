@@ -1,14 +1,15 @@
 import React from "react";
 import NavigationBar from "../../layout/NavigationBar/NavigationBar";
+import { USERROUTE, USERACCOUNTSROUTE } from "../../../constants/Constants";
 
 const UserContainer = () => {
   return (
     <div>
       <NavigationBar
-        title={"Settings"}
+        title={"User"}
         headers={{
-          Settings: "/settings",
-          Accounts: "/settings/accounts"
+          Settings: USERROUTE,
+          Accounts: USERACCOUNTSROUTE
         }}
       />
     </div>

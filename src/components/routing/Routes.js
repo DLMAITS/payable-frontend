@@ -6,9 +6,15 @@ import ExchangeContainer from "../exchange/exchangeContainer/exchangeContainer";
 import UserContainer from "../user/userContainer/userContainer";
 import {
   DASHBOARDHOMEROUTE,
+  DASHBOARDHOMEAPPEARANCEROUTE,
   USERROUTE,
+  USERACCOUNTSROUTE,
   EXCHANGEROUTE,
-  INVOICESROUTE
+  EXCHANGEINBOUNDROUTE,
+  EXCHANGEOUTBOUNDROUTE,
+  INVOICESROUTE,
+  INVOICESADDROUTE,
+  INVOICESHISTORYROUTE
 } from "../../constants/Constants";
 
 const Routes = () => {
@@ -17,12 +23,24 @@ const Routes = () => {
       <Switch>
         <Route
           exact
-          path={DASHBOARDHOMEROUTE}
+          path={[DASHBOARDHOMEROUTE, DASHBOARDHOMEAPPEARANCEROUTE]}
           component={DashboardHomeContainer}
         ></Route>
-        <Route exact path={INVOICESROUTE} component={InvoicesContainer}></Route>
-        <Route exact path={EXCHANGEROUTE} component={ExchangeContainer}></Route>
-        <Route exact path={USERROUTE} component={UserContainer}></Route>
+        <Route
+          exact
+          path={[INVOICESROUTE, INVOICESADDROUTE, INVOICESHISTORYROUTE]}
+          component={InvoicesContainer}
+        ></Route>
+        <Route
+          exact
+          path={[EXCHANGEROUTE, EXCHANGEINBOUNDROUTE, EXCHANGEOUTBOUNDROUTE]}
+          component={ExchangeContainer}
+        ></Route>
+        <Route
+          exact
+          path={[USERROUTE, USERACCOUNTSROUTE]}
+          component={UserContainer}
+        ></Route>
       </Switch>
     </Fragment>
   );

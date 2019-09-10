@@ -1,5 +1,10 @@
 import React from "react";
 import NavigationBar from "../../layout/NavigationBar/NavigationBar";
+import {
+  INVOICESROUTE,
+  INVOICESADDROUTE,
+  INVOICESHISTORYROUTE
+} from "../../../constants/Constants";
 
 const InvoicesContainer = () => {
   return (
@@ -7,9 +12,9 @@ const InvoicesContainer = () => {
       <NavigationBar
         title={"Invoices"}
         headers={{
-          Overview: "/invoices",
-          Add: "/invoices/add",
-          History: "/invoices/history"
+          Overview: INVOICESROUTE,
+          Add: INVOICESADDROUTE,
+          History: INVOICESHISTORYROUTE
         }}
       />
     </div>

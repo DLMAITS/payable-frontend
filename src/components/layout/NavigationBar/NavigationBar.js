@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "./NavigationBar.css";
 
-const NavigationBar = ({ title, headers }) => {
+const NavigationBar = ({ title, headers, history }) => {
+  const path = history.location.pathname;
+
   return (
     <Fragment>
       <div className="navbar-container">
@@ -11,7 +13,14 @@ const NavigationBar = ({ title, headers }) => {
           return (
             <span key={key}>
               <Link to={headers[key]} className="navbar-hyperlink">
-                <span className="navbar-header">{key} </span>
+                <span
+                  className={
+                    "navbar-header " +
+                    (path === headers[key] ? "navbar-selected" : "")
+                  }
+                >
+                  {key}{" "}
+                </span>
               </Link>
             </span>
           );
@@ -21,4 +30,4 @@ const NavigationBar = ({ title, headers }) => {
   );
 };
 
-export default NavigationBar;
+export default withRouter(NavigationBar);

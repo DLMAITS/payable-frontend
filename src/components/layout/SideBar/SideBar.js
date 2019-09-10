@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./SideBar.css";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import {
   DASHBOARD,
   INVOICES,
@@ -14,10 +14,35 @@ import {
   USERROUTE
 } from "../../../constants/Constants";
 
-const SideBar = () => {
+const SideBar = ({ history }) => {
   const [optionSelected, setOptionSelected] = useState({
     selectedIcon: null
   });
+
+  const path = history.location.pathname;
+
+  useEffect(() => {
+    const splitPath = path.split("/");
+    const parentOfSplitPath = "/" + splitPath[1];
+
+    // For the first element of the split path
+    switch (parentOfSplitPath) {
+      case DASHBOARDHOMEROUTE:
+        setOptionSelected({ selectedIcon: DASHBOARD });
+        break;
+      case INVOICESROUTE:
+        setOptionSelected({ selectedIcon: INVOICES });
+        break;
+      case EXCHANGEROUTE:
+        setOptionSelected({ selectedIcon: EXCHANGE });
+        break;
+      case USERROUTE:
+        setOptionSelected({ selectedIcon: USER });
+        break;
+      default:
+        break;
+    }
+  }, [path]);
 
   return (
     <div className="sidebar-container">
@@ -37,7 +62,10 @@ const SideBar = () => {
               <i
                 className={
                   "fas fa-home fa-lg " +
-                  (optionSelected.selectedIcon === DASHBOARD ? "selected" : "")
+                  (optionSelected.selectedIcon === DASHBOARD ||
+                  path === DASHBOARDHOMEROUTE
+                    ? "selected"
+                    : "unselected")
                 }
               ></i>
             </Link>
@@ -50,7 +78,10 @@ const SideBar = () => {
               <i
                 className={
                   "fas fa-file fa-lg " +
-                  (optionSelected.selectedIcon === INVOICES ? "selected" : "")
+                  (optionSelected.selectedIcon === INVOICES ||
+                  path === INVOICESROUTE
+                    ? "selected"
+                    : "unselected")
                 }
               ></i>
             </Link>
@@ -63,7 +94,10 @@ const SideBar = () => {
               <i
                 className={
                   "fas fa-exchange-alt fa-lg " +
-                  (optionSelected.selectedIcon === EXCHANGE ? "selected" : "")
+                  (optionSelected.selectedIcon === EXCHANGE ||
+                  path === EXCHANGEROUTE
+                    ? "selected"
+                    : "unselected")
                 }
               ></i>
             </Link>
@@ -76,7 +110,9 @@ const SideBar = () => {
               <i
                 className={
                   "fas fa-user fa-lg " +
-                  (optionSelected.selectedIcon === USER ? "selected" : "")
+                  (optionSelected.selectedIcon === USER || path === USERROUTE
+                    ? "selected"
+                    : "unselected")
                 }
               ></i>
             </Link>
@@ -99,4 +135,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default withRouter(SideBar);

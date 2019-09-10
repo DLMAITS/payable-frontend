@@ -1,5 +1,9 @@
 import React from "react";
 import NavigationBar from "../../layout/NavigationBar/NavigationBar";
+import {
+  DASHBOARDHOMEROUTE,
+  DASHBOARDHOMEAPPEARANCEROUTE
+} from "../../../constants/Constants";
 
 const DashboardHomeContainer = () => {
   return (
@@ -7,8 +11,8 @@ const DashboardHomeContainer = () => {
       <NavigationBar
         title={"Dashboard Home"}
         headers={{
-          Overview: "/dashboard-home",
-          Appearance: "/dashboard-home/appearance"
+          Overview: DASHBOARDHOMEROUTE,
+          Appearance: DASHBOARDHOMEAPPEARANCEROUTE
         }}
       />
     </div>

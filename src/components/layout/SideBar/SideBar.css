@@ -72,3 +72,7 @@ ul {
 .selected {
   color: white;
 }
+
+.unselected {
+  color: #aaabb8;
+}
