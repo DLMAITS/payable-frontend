@@ -45,7 +45,7 @@ const SideBar = ({ history }) => {
   }, [path]);
 
   return (
-    <div className="sidebar-container">
+    <nav className="sidebar-container">
       <Link to="/">
         <div className="sidebar-logo-container">
           <i className="fas fa-eye sidebar-logo fa-lg"></i>
@@ -131,7 +131,7 @@ const SideBar = ({ history }) => {
           </ul>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 

@@ -4,7 +4,20 @@ export const INVOICES = "INVOICES";
 export const EXCHANGE = "EXCHANGE";
 export const USER = "USER";
 
-// Routes
+// Routes during onboarding state
+export const ONBOARDINGWELCOMEROUTE = "/onboarding";
+export const ONBOARDINGIDUPLOADROUTE = "/onboarding/id-upload";
+export const ONBOARDINGIDEXTRACTIONROUTE = "/onboarding/id-extraction";
+export const ONBOARDINGCOMPANYSEARCHRESULTSROUTE =
+  "/onboarding/company-search-results";
+export const ONBOARDINGCOMPANYEXTRACTIONROUTE =
+  "/onboarding/company-extraction";
+export const ONBOARDINGCOMPANYSHAREHOLDERSROUTE =
+  "/onboarding/company-shareholders";
+export const ONBOARDINGCOMPANYCHECKSROUTE = "/onboarding/company-checks";
+export const ONBOARDINGACCOUNTSETUPROUTE = "/onboarding/account-setup";
+
+// Routes once onboarding is complete
 export const DASHBOARDHOMEROUTE = "/dashboard-home";
 export const INVOICESROUTE = "/invoices";
 export const EXCHANGEROUTE = "/exchange";

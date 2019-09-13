@@ -8,9 +8,6 @@ const App = () => {
     <Router>
       <Fragment>
         <Switch>
-          <Route exact path="/nogo">
-            No go
-          </Route>
           <Route component={AppContainer} />
         </Switch>
       </Fragment>

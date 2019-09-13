@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
 import DashboardHomeContainer from "../dashboardHome/DashboardHomeContainer/DashboardHomeContainer";
-import InvoicesContainer from "../invoices/invoicesContainer/invoicesContainer";
-import ExchangeContainer from "../exchange/exchangeContainer/exchangeContainer";
-import UserContainer from "../user/userContainer/userContainer";
+import InvoicesContainer from "../invoices/InvoicesContainer/InvoicesContainer";
+import ExchangeContainer from "../exchange/ExchangeContainer/ExchangeContainer";
+import UserContainer from "../user/UserContainer/UserContainer";
 import {
   DASHBOARDHOMEROUTE,
   DASHBOARDHOMEAPPEARANCEROUTE,
@@ -17,7 +17,7 @@ import {
   INVOICESHISTORYROUTE
 } from "../../constants/Constants";
 
-const Routes = () => {
+const DashboardRoutes = () => {
   return (
     <Fragment>
       <Switch>
@@ -46,4 +46,4 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+export default DashboardRoutes;

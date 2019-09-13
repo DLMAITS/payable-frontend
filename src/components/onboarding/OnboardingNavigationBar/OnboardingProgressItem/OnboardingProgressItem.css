@@ -1,0 +1,16 @@
+.onboarding-progress-bar-item-selected,
+.onboarding-progress-bar-item-unselected {
+  line-height: 50px;
+  text-align: center;
+  font-family: "Lucida Bright", Georgia, serif;
+  font-size: 18px;
+  font-style: normal;
+}
+
+.onboarding-progress-bar-item-selected {
+  color: #25274d;
+}
+
+.onboarding-progress-bar-item-unselected {
+  color: #a8d0e6;
+}

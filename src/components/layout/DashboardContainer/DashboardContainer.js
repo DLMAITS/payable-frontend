@@ -1,7 +1,7 @@
 import React from "react";
 import "./DashboardContainer.css";
 import SideBar from "../SideBar/SideBar";
-import Routes from "../../routing/Routes";
+import DashboardRoutes from "../../routing/DashboardRoutes";
 import { Route, Switch } from "react-router-dom";
 
 const DashboardContainer = () => {
@@ -9,7 +9,7 @@ const DashboardContainer = () => {
     <div className="dashboard-container dashboard-container-position">
       <SideBar />
       <Switch>
-        <Route component={Routes} />
+        <Route component={DashboardRoutes} />
       </Switch>
     </div>
   );
