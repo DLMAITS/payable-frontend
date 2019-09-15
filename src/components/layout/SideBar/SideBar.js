@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from "react";
-import "./SideBar.css";
-import { Link, withRouter } from "react-router-dom";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+import { makeStyles } from "@material-ui/core";
+import DividerLineLight from "../utils/DividerLineLight";
+import SideBarTopElement from "./SideBarTopElement/SideBarTopElement";
+import SideBarMenuList from "./SideBarMenuList/SideBarMenuList";
+import SideBarMenuItem from "./SideBarMenuItem/SideBarMenuItem";
+import SideBarBottomElement from "./SideBarBottomElement/SideBarBottomElement";
 import {
   DASHBOARD,
   INVOICES,
@@ -14,124 +19,77 @@ import {
   USERROUTE
 } from "../../../constants/Constants";
 
+const useStyles = makeStyles(theme => ({
+  root: {
+    background: "#25274d",
+    width: "100%",
+    height: "100%"
+  }
+}));
+
 const SideBar = ({ history }) => {
+  const classes = useStyles();
+
+  // eslint-disable-next-line
   const [optionSelected, setOptionSelected] = useState({
     selectedIcon: null
   });
 
   const path = history.location.pathname;
+  const parentRootOfPath = "/" + path.split("/")[1];
 
-  useEffect(() => {
-    const splitPath = path.split("/");
-    const parentOfSplitPath = "/" + splitPath[1];
-
-    // For the first element of the split path
-    switch (parentOfSplitPath) {
-      case DASHBOARDHOMEROUTE:
-        setOptionSelected({ selectedIcon: DASHBOARD });
-        break;
-      case INVOICESROUTE:
-        setOptionSelected({ selectedIcon: INVOICES });
-        break;
-      case EXCHANGEROUTE:
-        setOptionSelected({ selectedIcon: EXCHANGE });
-        break;
-      case USERROUTE:
-        setOptionSelected({ selectedIcon: USER });
-        break;
+  const configureIcon = designatedIcon => {
+    switch (designatedIcon) {
+      case DASHBOARD:
+        return "fa-home";
+      case INVOICES:
+        return "fa-file";
+      case EXCHANGE:
+        return "fa-exchange-alt";
+      case USER:
+        return "fa-user";
       default:
-        break;
+        console.log(designatedIcon);
+        return "fa-user";
     }
-  }, [path]);
+  };
 
   return (
-    <nav className="sidebar-container">
-      <Link to="/">
-        <div className="sidebar-logo-container">
-          <i className="fas fa-eye sidebar-logo fa-lg"></i>
-        </div>
-      </Link>
-      <div className="sidebar-line"></div>
-      <div>
-        <ul>
-          <li>
-            <Link
-              to={DASHBOARDHOMEROUTE}
-              onClick={e => setOptionSelected({ selectedIcon: DASHBOARD })}
-            >
-              <i
-                className={
-                  "fas fa-home fa-lg " +
-                  (optionSelected.selectedIcon === DASHBOARD ||
-                  path === DASHBOARDHOMEROUTE
-                    ? "selected"
-                    : "unselected")
-                }
-              ></i>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={INVOICESROUTE}
-              onClick={e => setOptionSelected({ selectedIcon: INVOICES })}
-            >
-              <i
-                className={
-                  "fas fa-file fa-lg " +
-                  (optionSelected.selectedIcon === INVOICES ||
-                  path === INVOICESROUTE
-                    ? "selected"
-                    : "unselected")
-                }
-              ></i>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={EXCHANGEROUTE}
-              onClick={e => setOptionSelected({ selectedIcon: EXCHANGE })}
-            >
-              <i
-                className={
-                  "fas fa-exchange-alt fa-lg " +
-                  (optionSelected.selectedIcon === EXCHANGE ||
-                  path === EXCHANGEROUTE
-                    ? "selected"
-                    : "unselected")
-                }
-              ></i>
-            </Link>
-          </li>
-          <li>
-            <Link
-              to={USERROUTE}
-              onClick={e => setOptionSelected({ selectedIcon: USER })}
-            >
-              <i
-                className={
-                  "fas fa-user fa-lg " +
-                  (optionSelected.selectedIcon === USER || path === USERROUTE
-                    ? "selected"
-                    : "unselected")
-                }
-              ></i>
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className="sidebar-container-bottom">
-        <div className="sidebar-line"></div>
-        <div>
-          <ul>
-            <li>
-              <Link to="/logout">
-                <i className="fas fa-sign-out-alt fa-lg"></i>
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <div className={classes.root}>
+      <SideBarTopElement />
+      <DividerLineLight />
+      <SideBarMenuList>
+        <SideBarMenuItem
+          currentParentRootOfPath={parentRootOfPath}
+          designatedRoute={DASHBOARDHOMEROUTE}
+          selectedIcon={DASHBOARD}
+          iconIsSelected={setOptionSelected}
+          configureIcon={configureIcon(DASHBOARD)}
+        />
+        <SideBarMenuItem
+          currentParentRootOfPath={parentRootOfPath}
+          designatedRoute={INVOICESROUTE}
+          selectedIcon={INVOICES}
+          iconIsSelected={setOptionSelected}
+          configureIcon={configureIcon(INVOICES)}
+        />
+        <SideBarMenuItem
+          currentParentRootOfPath={parentRootOfPath}
+          designatedRoute={EXCHANGEROUTE}
+          selectedIcon={EXCHANGE}
+          iconIsSelected={setOptionSelected}
+          configureIcon={configureIcon(EXCHANGE)}
+        />
+        <SideBarMenuItem
+          currentParentRootOfPath={parentRootOfPath}
+          designatedRoute={USERROUTE}
+          selectedIcon={USER}
+          iconIsSelected={setOptionSelected}
+          configureIcon={configureIcon(USER)}
+        />
+      </SideBarMenuList>
+      <SideBarBottomElement />
+    </div>
   );
 };
 

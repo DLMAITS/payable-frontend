@@ -1,0 +1,13 @@
+.fa-user:hover,
+.fa-home:hover,
+.fa-file:hover,
+.fa-exchange-alt:hover {
+  color: white;
+}
+
+.selected {
+  color: white;
+}
+.unselected {
+  color: #aaabb8;
+}

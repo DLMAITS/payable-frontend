@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const OnboardingWelcomeContainer = () => {
   return (
     <Fragment>
-      <div></div>
+      <div>Onboarding Welcome</div>
     </Fragment>
   );
 };
