@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./OnboardingNavigationBar.css";
 import OnboardingProgressItem from "./OnboardingProgressItem/OnboardingProgressItem";
 import { withRouter } from "react-router-dom";
 import {
@@ -12,6 +11,12 @@ import {
   ONBOARDINGCOMPANYCHECKSROUTE,
   ONBOARDINGACCOUNTSETUPROUTE
 } from "../../../../constants/Constants";
+import {
+  StyledOnboardingNavigationBarContainer,
+  StyledOnboardingNavigationBarLogoContainer,
+  StyledOnboardingNavigationBarLogo,
+  StyledOnboardingNavigationBarProgressBar
+} from "./OnboardingNavigationBar.styled";
 
 const OnboardingNavigationBar = ({ history }) => {
   const path = history.location.pathname;
@@ -71,11 +76,11 @@ const OnboardingNavigationBar = ({ history }) => {
   }, [path, setProgressState]);
 
   return (
-    <div className="onboarding-navigation-bar">
-      <div className="onboarding-navigation-bar-logo-container">
-        <i className="fas fa-eye fa-3x onboarding-logo-placement"></i>
-      </div>
-      <div className="onboarding-navigation-bar-progress-bar">
+    <StyledOnboardingNavigationBarContainer>
+      <StyledOnboardingNavigationBarLogoContainer>
+        <StyledOnboardingNavigationBarLogo className="fas fa-eye fa-3x" />
+      </StyledOnboardingNavigationBarLogoContainer>
+      <StyledOnboardingNavigationBarProgressBar>
         <div></div>
         {progressItemArray.map(item => (
           <OnboardingProgressItem
@@ -91,8 +96,8 @@ const OnboardingNavigationBar = ({ history }) => {
           />
         ))}
         <div></div>
-      </div>
-    </div>
+      </StyledOnboardingNavigationBarProgressBar>
+    </StyledOnboardingNavigationBarContainer>
   );
 };
 
