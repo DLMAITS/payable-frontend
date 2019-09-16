@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
-import "./SideBarMenuItem.css";
+import { StyledSideBarMenuItem } from "./SideBarMenuItem.styled";
 
 const SideBarMenuItem = ({
   currentParentRootOfPath,
@@ -17,7 +17,24 @@ const SideBarMenuItem = ({
           to={designatedRoute}
           onClick={e => iconIsSelected({ selectedIcon: designatedIcon })}
         >
-          <i
+          <StyledSideBarMenuItem
+            currentParentRootOfPath={currentParentRootOfPath}
+            designatedRoute={designatedRoute}
+            designatedIcon={designatedIcon}
+            selectedIcon={selectedIcon}
+            iconIsSelected={iconIsSelected}
+            configureIcon={configureIcon}
+          />
+        </Link>
+      </li>
+    </Fragment>
+  );
+};
+
+export default SideBarMenuItem;
+
+/*
+<i
             className={
               "fas " +
               configureIcon +
@@ -28,10 +45,4 @@ const SideBarMenuItem = ({
                 : "unselected")
             }
           ></i>
-        </Link>
-      </li>
-    </Fragment>
-  );
-};
-
-export default SideBarMenuItem;
+*/

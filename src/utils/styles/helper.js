@@ -9,3 +9,8 @@ export const colors = {
 export const fonts = {
   fontFamily: '"Lucida Bright", Georgia, serif'
 };
+
+export const icons = {
+  smallWidth: "35%",
+  largeWidth: "50%"
+};

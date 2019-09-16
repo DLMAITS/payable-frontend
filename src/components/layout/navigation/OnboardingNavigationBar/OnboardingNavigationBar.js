@@ -78,7 +78,7 @@ const OnboardingNavigationBar = ({ history }) => {
   return (
     <StyledOnboardingNavigationBarContainer>
       <StyledOnboardingNavigationBarLogoContainer>
-        <StyledOnboardingNavigationBarLogo className="fas fa-eye fa-3x" />
+        <StyledOnboardingNavigationBarLogo />
       </StyledOnboardingNavigationBarLogoContainer>
       <StyledOnboardingNavigationBarProgressBar>
         <div></div>

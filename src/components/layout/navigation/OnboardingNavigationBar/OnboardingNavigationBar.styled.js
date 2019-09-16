@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../../../utils/styles/helper";
+import { Eye } from "styled-icons/fa-regular/Eye";
 
 const { shadowTintedWhite, darkBlue } = colors;
 
@@ -22,9 +23,10 @@ const StyledOnboardingNavigationBarLogoContainer = styled.div`
   line-height: 100px;
 `;
 
-const StyledOnboardingNavigationBarLogo = styled.i`
+const StyledOnboardingNavigationBarLogo = styled(Eye)`
   color: ${darkBlue};
   vertical-align: middle;
+  width: 20%;
 `;
 
 const StyledOnboardingNavigationBarProgressBar = styled.div`

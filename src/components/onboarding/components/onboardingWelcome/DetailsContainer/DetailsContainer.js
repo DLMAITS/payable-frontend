@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./DetailsContainer.css";
 import { TextField, Button, withStyles, makeStyles } from "@material-ui/core";
 import { Link } from "react-router-dom";
@@ -41,13 +41,6 @@ const useStyles = makeStyles({
 
 const DetailsContainer = () => {
   const classes = useStyles();
-  const [formData, setFormData] = useState({
-    companyName: "",
-    firstName: "",
-    lastName: "",
-    email: "",
-    telephone: ""
-  });
 
   return (
     <div>
@@ -73,7 +66,7 @@ const DetailsContainer = () => {
               id="first-name"
               label="First Name"
               margin="normal"
-              className={"textfield-half-width" + " " + classes.root}
+              className={"textfield-half-width"}
             />{" "}
           </span>
           <span>
