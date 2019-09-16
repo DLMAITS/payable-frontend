@@ -3,11 +3,14 @@ export const colors = {
   shadowTintedWhite: "#eeeded",
   darkBlue: "#25274d",
   lightBlue: "#a8d0e6",
-  white: "white"
+  white: "white",
+  grey: "grey",
+  green: "green",
+  darkGreen: "darkgreen"
 };
 
 export const fonts = {
-  fontFamily: '"Lucida Bright", Georgia, serif'
+  fontFamily: "'Roboto', sans-serif"
 };
 
 export const icons = {
