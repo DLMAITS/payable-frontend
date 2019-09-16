@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import { makeStyles } from "@material-ui/core";
-import DividerLineLight from "../utils/DividerLineLight";
+import DividerLineLight from "../../dividers/DividerLineLight/DividerLineLight";
 import SideBarTopElement from "./SideBarTopElement/SideBarTopElement";
 import SideBarMenuList from "./SideBarMenuList/SideBarMenuList";
 import SideBarMenuItem from "./SideBarMenuItem/SideBarMenuItem";
@@ -11,13 +11,13 @@ import {
   INVOICES,
   EXCHANGE,
   USER
-} from "../../../constants/Constants";
+} from "../../../../constants/Constants";
 import {
   DASHBOARDHOMEROUTE,
   INVOICESROUTE,
   EXCHANGEROUTE,
   USERROUTE
-} from "../../../constants/Constants";
+} from "../../../../constants/Constants";
 
 const useStyles = makeStyles(theme => ({
   root: {

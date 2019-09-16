@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { makeStyles } from "@material-ui/core";
-import OnboardingNavigationBar from "../OnboardingNavigationBar/OnboardingNavigationBar";
+import OnboardingNavigationBar from "../../navigation/OnboardingNavigationBar/OnboardingNavigationBar";
 import OnboardingRoutes from "../../../routing/OnboardingRoutes";
 
 const useStyles = makeStyles(theme => ({

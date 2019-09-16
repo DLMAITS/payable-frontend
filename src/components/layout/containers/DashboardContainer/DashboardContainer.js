@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import SideBar from "../SideBar/SideBar";
-import DashboardRoutes from "../../routing/DashboardRoutes";
+import SideBar from "../../navigation/SideBar/SideBar";
+import DashboardRoutes from "../../../routing/DashboardRoutes";
 import { Route, Switch } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({

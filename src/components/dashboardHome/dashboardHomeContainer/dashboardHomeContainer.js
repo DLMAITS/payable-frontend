@@ -1,5 +1,5 @@
 import React from "react";
-import NavigationBar from "../../layout/NavigationBar/NavigationBar";
+import NavigationBar from "../../layout/navigation/NavigationBar/NavigationBar";
 import {
   DASHBOARDHOMEROUTE,
   DASHBOARDHOMEAPPEARANCEROUTE

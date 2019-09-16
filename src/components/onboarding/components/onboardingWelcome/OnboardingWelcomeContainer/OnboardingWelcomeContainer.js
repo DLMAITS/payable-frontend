@@ -6,7 +6,7 @@ import InfoContainer from "../InfoContainer/InfoContainer";
 
 const useStyles = makeStyles(theme => ({
   container: {
-    height: "700px"
+    height: "650px"
   },
   infoContainer: {
     background: "#25274d"

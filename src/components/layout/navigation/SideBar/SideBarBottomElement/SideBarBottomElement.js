@@ -1,7 +1,7 @@
 import React from "react";
 import "./SideBarBottomElement.css";
 import { makeStyles } from "@material-ui/core";
-import DividerLineLight from "../../utils/DividerLineLight";
+import DividerLineLight from "../../../dividers/DividerLineLight/DividerLineLight";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({

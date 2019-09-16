@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
 import DashboardContainer from "../DashboardContainer/DashboardContainer";
-import OnboardingContainer from "../../onboarding/layout/OnboardingContainer/OnboardingContainer";
+import OnboardingContainer from "../OnboardingContainer/OnboardingContainer";
 import {
   DASHBOARDHOMEROUTE,
   DASHBOARDHOMEAPPEARANCEROUTE,
@@ -13,7 +13,7 @@ import {
   INVOICESROUTE,
   INVOICESADDROUTE,
   INVOICESHISTORYROUTE
-} from "../../../constants/Constants";
+} from "../../../../constants/Constants";
 import {
   ONBOARDINGWELCOMEROUTE,
   ONBOARDINGIDUPLOADROUTE,
@@ -23,7 +23,7 @@ import {
   ONBOARDINGCOMPANYSHAREHOLDERSROUTE,
   ONBOARDINGCOMPANYCHECKSROUTE,
   ONBOARDINGACCOUNTSETUPROUTE
-} from "../../../constants/Constants";
+} from "../../../../constants/Constants";
 
 const AppContainer = () => {
   return (
