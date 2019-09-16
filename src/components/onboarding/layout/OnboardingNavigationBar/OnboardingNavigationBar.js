@@ -11,7 +11,7 @@ import {
   ONBOARDINGCOMPANYSHAREHOLDERSROUTE,
   ONBOARDINGCOMPANYCHECKSROUTE,
   ONBOARDINGACCOUNTSETUPROUTE
-} from "../../../constants/Constants";
+} from "../../../../constants/Constants";
 
 const OnboardingNavigationBar = ({ history }) => {
   const path = history.location.pathname;
@@ -26,7 +26,7 @@ const OnboardingNavigationBar = ({ history }) => {
   const progressItemArray = [
     {
       row: 0,
-      text: "Welcome",
+      text: "Get Started",
       paths: [ONBOARDINGWELCOMEROUTE]
     },
     {
@@ -44,7 +44,7 @@ const OnboardingNavigationBar = ({ history }) => {
     },
     {
       row: 3,
-      text: "Shareholder",
+      text: "Shareholders",
       paths: [ONBOARDINGCOMPANYSHAREHOLDERSROUTE]
     },
     {
@@ -67,8 +67,6 @@ const OnboardingNavigationBar = ({ history }) => {
       adjustedPath = path;
     }
 
-    console.log(adjustedPath);
-
     setProgressState({ highlightedState: adjustedPath });
   }, [path, setProgressState]);
 
@@ -82,7 +80,7 @@ const OnboardingNavigationBar = ({ history }) => {
         {progressItemArray.map(item => (
           <OnboardingProgressItem
             key={item[ROW]}
-            itemNumber={item[ROW]}
+            itemNumber={item[ROW] + 1}
             itemText={item[TEXT]}
             isSelected={
               item.paths.filter(path => path === progressState.highlightedState)

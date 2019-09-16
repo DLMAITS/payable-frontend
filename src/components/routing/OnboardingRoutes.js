@@ -1,13 +1,13 @@
 import React, { Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
-import OnboardingWelcomeContainer from "../onboarding/onboardingWelcome/OnboardingWelcomeContainer/OnboardingWelcomeContainer";
-import OnboardingIdUploadContainer from "../onboarding/onboardingIdUpload/OnboardingIdUploadContainer/OnboardingIdUploadContainer";
-import OnboardingIdExtractionContainer from "../onboarding/onboardingIdExtraction/OnboardingIdExtractionContainer/OnboardingIdExtractionContainer";
-import OnboardingCompanySearchResultsContainer from "../onboarding/onboardingCompanySearchResults/OnboardingCompanySearchResultsContainer/OnboardingCompanySearchResultsContainer";
-import OnboardingCompanyExtractionContainer from "../onboarding/onboardingCompanyExtraction/OnboardingCompanyExtractionContainer/OnboardingCompanyExtractionContainer";
-import OnboardingCompanyShareholdersContainer from "../onboarding/onboardingCompanyShareholders/OnboardingCompanyShareholdersContainer/OnboardingCompanyShareholdersContainer";
-import OnboardingCompanyChecksContainer from "../onboarding/onboardingCompanyChecks/OnboardingCompanyChecksContainer/OnboardingCompanyChecksContainer";
-import OnboardingAccountSetupContainer from "../onboarding/onboardingAccountSetup/OnboardingAccountSetupContainer/OnboardingAccountSetupContainer";
+import OnboardingWelcomeContainer from "../onboarding/components/onboardingWelcome/OnboardingWelcomeContainer/OnboardingWelcomeContainer";
+import OnboardingIdUploadContainer from "../onboarding/components/onboardingIdUpload/OnboardingIdUploadContainer/OnboardingIdUploadContainer";
+import OnboardingIdExtractionContainer from "../onboarding/components/onboardingIdExtraction/OnboardingIdExtractionContainer/OnboardingIdExtractionContainer";
+import OnboardingCompanySearchResultsContainer from "../onboarding/components/onboardingCompanySearchResults/OnboardingCompanySearchResultsContainer/OnboardingCompanySearchResultsContainer";
+import OnboardingCompanyExtractionContainer from "../onboarding/components/onboardingCompanyExtraction/OnboardingCompanyExtractionContainer/OnboardingCompanyExtractionContainer";
+import OnboardingCompanyShareholdersContainer from "../onboarding/components/onboardingCompanyShareholders/OnboardingCompanyShareholdersContainer/OnboardingCompanyShareholdersContainer";
+import OnboardingCompanyChecksContainer from "../onboarding/components/onboardingCompanyChecks/OnboardingCompanyChecksContainer/OnboardingCompanyChecksContainer";
+import OnboardingAccountSetupContainer from "../onboarding/components/onboardingAccountSetup/OnboardingAccountSetupContainer/OnboardingAccountSetupContainer";
 import {
   ONBOARDINGWELCOMEROUTE,
   ONBOARDINGIDUPLOADROUTE,

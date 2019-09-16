@@ -1,0 +1,56 @@
+.main-title,
+.sub-title,
+.small-text {
+  font-family: "Lucida Bright", Georgia, serif;
+  font-style: normal;
+  word-break: break-word;
+}
+
+.sub-title,
+.small-text {
+  color: grey;
+}
+
+.main-title {
+  line-height: 30px;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 30px;
+  color: #25274d;
+}
+
+.sub-title {
+  line-height: 5px;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 20px;
+}
+
+.required-options-text {
+  text-align: left;
+  padding-top: 20px;
+  margin-left: 10%;
+}
+
+.terms-and-conditions-text {
+  text-align: center;
+  width: 80%;
+}
+
+.small-text {
+  line-height: 5px;
+  font-size: 12px;
+  margin-top: 3rem;
+}
+
+.form {
+  margin: 0rem 0;
+}
+
+.textfield-full-width {
+  width: 80%;
+}
+
+.textfield-half-width {
+  width: 40%;
+}

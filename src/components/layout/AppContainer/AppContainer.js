@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Route, Switch } from "react-router-dom";
 import DashboardContainer from "../DashboardContainer/DashboardContainer";
-import OnboardingContainer from "../../onboarding/OnboardingContainer/OnboardingContainer";
+import OnboardingContainer from "../../onboarding/layout/OnboardingContainer/OnboardingContainer";
 import {
   DASHBOARDHOMEROUTE,
   DASHBOARDHOMEAPPEARANCEROUTE,
