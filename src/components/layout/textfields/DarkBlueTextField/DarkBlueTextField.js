@@ -15,7 +15,7 @@ const DarkBlueTextFieldBase = withStyles({
     "& .MuiInput-underline:before": {
       borderBottomColor: darkBlue
     },
-    "& .MuiInput-underline:hover:not($disabled):before": {
+    "& .MuiInput-underline:hover:before": {
       borderBottomColor: darkBlue
     }
   }

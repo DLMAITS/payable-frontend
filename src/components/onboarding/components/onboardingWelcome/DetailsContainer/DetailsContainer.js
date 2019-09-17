@@ -13,27 +13,22 @@ import { IconButton } from "@material-ui/core";
 import { InputAdornment } from "@material-ui/core";
 import { Visibility } from "@material-ui/icons";
 import { VisibilityOff } from "@material-ui/icons";
+import ThreeDotsSpinner from "../../../../layout/spinners/ThreeDotsSpinner";
 
 const DetailsContainer = ({ history }) => {
   const [formData, setFormData] = useState({
     companyName: "",
-    firstName: "",
-    lastName: "",
+    fullName: "",
     email: "",
     password: "",
     phoneNumber: "",
-    showPassword: false
+    isLoading: false
   });
 
-  const {
-    companyName,
-    firstName,
-    lastName,
-    email,
-    password,
-    phoneNumber,
-    showPassword
-  } = formData;
+  const [showPassword, setIsShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const { companyName, fullName, email, password, phoneNumber } = formData;
 
   const onChange = e => {
     setFormData({
@@ -45,17 +40,20 @@ const DetailsContainer = ({ history }) => {
   const onSubmit = async e => {
     e.preventDefault();
 
+    setIsLoading(!isLoading);
+
     // TODO
     /* 
     if (isAuthenticated) {
       return <Redirect to='/onboarding/company'>
     }
     */
-    history.push("/onboarding/company");
+
+    //history.push("/onboarding/company");
   };
 
   const handleShowClickPassword = () => {
-    setFormData({ ...formData, showPassword: !showPassword });
+    setIsShowPassword(!showPassword);
   };
 
   const handleMouseDownPassword = e => {
@@ -85,28 +83,15 @@ const DetailsContainer = ({ history }) => {
           helperText="The company's legal name"
         />
         <div>
-          <span>
-            <DarkBlueTextField
-              id="first-name"
-              label="First Name"
-              margin="normal"
-              width="40%"
-              name="firstName"
-              value={firstName}
-              onChange={e => onChange(e)}
-            />{" "}
-          </span>
-          <span>
-            <DarkBlueTextField
-              id="last-name"
-              label="Last Name"
-              margin="normal"
-              width="40%"
-              name="lastName"
-              value={lastName}
-              onChange={e => onChange(e)}
-            />
-          </span>
+          <DarkBlueTextField
+            id="full-name"
+            label="Your Full Name"
+            margin="normal"
+            width="80%"
+            name="fullName"
+            value={fullName}
+            onChange={e => onChange(e)}
+          />
         </div>
         <div>
           <DarkBlueTextField
@@ -170,9 +155,11 @@ const DetailsContainer = ({ history }) => {
           width="60%"
           mt="30px"
           type="submit"
+          disabled={isLoading}
         >
-          Create Account
+          {isLoading ? "Please wait" : "Create account"}
         </SubmitButton>
+        {isLoading && <ThreeDotsSpinner height={30} width={30} />}
       </form>
     </div>
   );
