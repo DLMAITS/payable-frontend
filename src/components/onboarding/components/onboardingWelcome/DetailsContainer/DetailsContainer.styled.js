@@ -17,7 +17,7 @@ const StyledMainTitle = styled(StyledBaseText)`
 `;
 
 const StyledSubTitle = styled(StyledBaseText)`
-  line-height: 20px;
+  line-height: 15px;
   text-align: center;
   font-size: 18px;
   padding-top: 20px;
@@ -25,9 +25,9 @@ const StyledSubTitle = styled(StyledBaseText)`
 `;
 
 const StyledRequiredOptionsText = styled(StyledSubTitle)`
-  line-height: 15px;
+  line-height: 10px;
   text-align: left;
-  padding-top: 50px;
+  padding-top: 30px;
   margin-left: 10%;
   font-size: 14px;
 `;

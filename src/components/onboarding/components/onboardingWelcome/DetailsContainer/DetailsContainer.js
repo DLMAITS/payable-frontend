@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyledMainTitle,
   StyledSubTitle,
@@ -10,6 +10,15 @@ import { DarkBlueTextField } from "../../../../layout/textfields/DarkBlueTextFie
 import { SubmitButton } from "../../../../layout/buttons/SubmitButton/SubmitButton";
 
 const DetailsContainer = () => {
+  const [formData, setFormData] = useState({
+    companyName: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    phoneNumber: ""
+  });
+
   return (
     <div>
       <div>
@@ -56,6 +65,15 @@ const DetailsContainer = () => {
         </div>
         <div>
           <DarkBlueTextField
+            id="password"
+            label="Password"
+            margin="normal"
+            width="80%"
+            type="password"
+          />
+        </div>
+        <div>
+          <DarkBlueTextField
             id="phone-number"
             label="Phone Number"
             margin="normal"
@@ -69,7 +87,13 @@ const DetailsContainer = () => {
           Terms and Conditions
         </StyledTermsAndConditionsHyperlink>
       </StyleTermsAndConditionsText>
-      <SubmitButton variant="contained" color="primary" width="60%" mt="30px">
+      <SubmitButton
+        variant="contained"
+        color="primary"
+        width="60%"
+        mt="30px"
+        onSubmit={e => console.log(formData)}
+      >
         Create Account
       </SubmitButton>
     </div>

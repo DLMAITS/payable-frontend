@@ -1,23 +1,27 @@
 import React, { Fragment } from "react";
-import { Grid, Box } from "@material-ui/core";
+import { Grid, Box, Hidden } from "@material-ui/core";
 import DetailsContainer from "../DetailsContainer/DetailsContainer";
 import InfoContainer from "../InfoContainer/InfoContainer";
 import {
   StyledGridContainer,
-  DarkBlueGridItem
+  DarkBlueGridItem,
+  useStyles
 } from "./OnboardingWelcomeContainer.styled";
 
 const OnboardingWelcomeContainer = () => {
+  const classes = useStyles();
   return (
     <Fragment>
-      <Box mx="auto" mt={3} ml={40} mr={40} boxShadow={10}>
+      <Box mt={3} boxShadow={10} m="auto" className={classes.box}>
         <StyledGridContainer container align="center" justify="center">
-          <Grid item xs={6}>
+          <Grid item xs={12} sm={12} md={6}>
             <DetailsContainer />
           </Grid>
-          <DarkBlueGridItem item xs={6}>
-            <InfoContainer />
-          </DarkBlueGridItem>
+          <Hidden smDown>
+            <DarkBlueGridItem item md={6}>
+              <InfoContainer />
+            </DarkBlueGridItem>
+          </Hidden>
         </StyledGridContainer>
       </Box>
     </Fragment>
