@@ -10,6 +10,7 @@ import OnboardingCompanyChecksContainer from "../onboarding/components/onboardin
 import OnboardingAccountSetupContainer from "../onboarding/components/onboardingAccountSetup/OnboardingAccountSetupContainer/OnboardingAccountSetupContainer";
 import {
   ONBOARDINGWELCOMEROUTE,
+  ONBOARDINGCOMPANYROUTE,
   ONBOARDINGIDUPLOADROUTE,
   ONBOARDINGIDEXTRACTIONROUTE,
   ONBOARDINGCOMPANYSEARCHRESULTSROUTE,
@@ -27,6 +28,11 @@ const OnboardingRoutes = () => {
           exact
           path={ONBOARDINGWELCOMEROUTE}
           component={OnboardingWelcomeContainer}
+        />
+        <Route
+          exact
+          path={ONBOARDINGCOMPANYROUTE}
+          component={OnboardingCompanySearchResultsContainer}
         />
         <Route
           exact

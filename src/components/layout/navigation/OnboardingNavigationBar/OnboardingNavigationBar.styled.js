@@ -47,7 +47,7 @@ const StyledOnboardingNavigationBarProgressBar = styled.div`
   margin: 0 auto;
   line-height: 100px;
   display: grid;
-  grid-template-columns: 2% 16% 16% 16% 16% 16% 16% 2%;
+  grid-template-columns: 25% 25% 25% 25%;
   grid-gap: 0rem;
   width: 1000px;
 `;

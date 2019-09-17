@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 import {
   StyledMainTitle,
   StyledSubTitle,
@@ -9,7 +10,7 @@ import {
 import { DarkBlueTextField } from "../../../../layout/textfields/DarkBlueTextField/DarkBlueTextField";
 import { SubmitButton } from "../../../../layout/buttons/SubmitButton/SubmitButton";
 
-const DetailsContainer = () => {
+const DetailsContainer = ({ history }) => {
   const [formData, setFormData] = useState({
     companyName: "",
     firstName: "",
@@ -39,7 +40,12 @@ const DetailsContainer = () => {
     e.preventDefault();
 
     // TODO
-    console.log(formData);
+    /* 
+    if (isAuthenticated) {
+      return <Redirect to='/onboarding/company'>
+    }
+    */
+    history.push("/onboarding/company");
   };
 
   return (
@@ -143,4 +149,4 @@ const DetailsContainer = () => {
   );
 };
 
-export default DetailsContainer;
+export default withRouter(DetailsContainer);

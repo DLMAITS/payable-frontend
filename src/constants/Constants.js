@@ -6,6 +6,8 @@ export const USER = "USER";
 
 // Routes during onboarding state
 export const ONBOARDINGWELCOMEROUTE = "/onboarding";
+export const ONBOARDINGCOMPANYROUTE = "/onboarding/company";
+
 export const ONBOARDINGIDUPLOADROUTE = "/onboarding/id-upload";
 export const ONBOARDINGIDEXTRACTIONROUTE = "/onboarding/id-extraction";
 export const ONBOARDINGCOMPANYSEARCHRESULTSROUTE =

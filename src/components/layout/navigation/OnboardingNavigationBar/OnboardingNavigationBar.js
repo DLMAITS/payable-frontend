@@ -3,11 +3,7 @@ import OnboardingProgressItem from "./OnboardingProgressItem/OnboardingProgressI
 import { withRouter } from "react-router-dom";
 import {
   ONBOARDINGWELCOMEROUTE,
-  ONBOARDINGIDUPLOADROUTE,
-  ONBOARDINGIDEXTRACTIONROUTE,
-  ONBOARDINGCOMPANYSEARCHRESULTSROUTE,
-  ONBOARDINGCOMPANYEXTRACTIONROUTE,
-  ONBOARDINGCOMPANYSHAREHOLDERSROUTE,
+  ONBOARDINGCOMPANYROUTE,
   ONBOARDINGCOMPANYCHECKSROUTE,
   ONBOARDINGACCOUNTSETUPROUTE
 } from "../../../../constants/Constants";
@@ -38,30 +34,17 @@ const OnboardingNavigationBar = ({ history }) => {
     },
     {
       row: 1,
-      text: "ID",
-      paths: [ONBOARDINGIDUPLOADROUTE, ONBOARDINGIDEXTRACTIONROUTE]
+      text: "Company",
+      paths: [ONBOARDINGCOMPANYROUTE]
     },
     {
       row: 2,
-      text: "Company",
-      paths: [
-        ONBOARDINGCOMPANYSEARCHRESULTSROUTE,
-        ONBOARDINGCOMPANYEXTRACTIONROUTE
-      ]
-    },
-    {
-      row: 3,
-      text: "Shareholders",
-      paths: [ONBOARDINGCOMPANYSHAREHOLDERSROUTE]
-    },
-    {
-      row: 4,
-      text: "KYC",
+      text: "Details",
       paths: [ONBOARDINGCOMPANYCHECKSROUTE]
     },
     {
-      row: 5,
-      text: "T&Cs",
+      row: 3,
+      text: "Finalise",
       paths: [ONBOARDINGACCOUNTSETUPROUTE]
     }
   ];
@@ -87,7 +70,6 @@ const OnboardingNavigationBar = ({ history }) => {
         </StyledOnboardingNavigationBarLogoContainer>
       </Hidden>
       <StyledOnboardingNavigationBarProgressBar className={classes.box}>
-        <div></div>
         {progressItemArray.map(item => (
           <OnboardingProgressItem
             key={item[ROW]}
@@ -101,7 +83,6 @@ const OnboardingNavigationBar = ({ history }) => {
             }
           />
         ))}
-        <div></div>
       </StyledOnboardingNavigationBarProgressBar>
     </StyledOnboardingNavigationBarContainer>
   );
