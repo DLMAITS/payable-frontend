@@ -1,16 +1,26 @@
 import React from "react";
-import { StyledOnboardingProgressItemElement } from "./OnboardingProgressItem.styled";
+import {
+  StyledOnboardingProgressItemElement,
+  useStyles
+} from "./OnboardingProgressItem.styled";
+import { Hidden } from "@material-ui/core";
 
 const OnboardingProgressItem = props => {
+  const classes = useStyles();
   const { itemNumber, itemText, isSelected } = props;
   return (
     <div>
-      <StyledOnboardingProgressItemElement isSelected={isSelected}>
+      <StyledOnboardingProgressItemElement
+        isSelected={isSelected}
+        className={classes.number}
+      >
         {itemNumber}
       </StyledOnboardingProgressItemElement>
-      <StyledOnboardingProgressItemElement isSelected={isSelected}>
-        {itemText}
-      </StyledOnboardingProgressItemElement>
+      <Hidden smDown>
+        <StyledOnboardingProgressItemElement isSelected={isSelected}>
+          {itemText}
+        </StyledOnboardingProgressItemElement>
+      </Hidden>
     </div>
   );
 };

@@ -15,8 +15,10 @@ import {
   StyledOnboardingNavigationBarContainer,
   StyledOnboardingNavigationBarLogoContainer,
   StyledOnboardingNavigationBarLogo,
-  StyledOnboardingNavigationBarProgressBar
+  StyledOnboardingNavigationBarProgressBar,
+  useStyles
 } from "./OnboardingNavigationBar.styled";
+import { Hidden } from "@material-ui/core";
 
 const OnboardingNavigationBar = ({ history }) => {
   const path = history.location.pathname;
@@ -75,12 +77,16 @@ const OnboardingNavigationBar = ({ history }) => {
     setProgressState({ highlightedState: adjustedPath });
   }, [path, setProgressState]);
 
+  const classes = useStyles();
+
   return (
     <StyledOnboardingNavigationBarContainer>
-      <StyledOnboardingNavigationBarLogoContainer>
-        <StyledOnboardingNavigationBarLogo />
-      </StyledOnboardingNavigationBarLogoContainer>
-      <StyledOnboardingNavigationBarProgressBar>
+      <Hidden smDown>
+        <StyledOnboardingNavigationBarLogoContainer>
+          <StyledOnboardingNavigationBarLogo />
+        </StyledOnboardingNavigationBarLogoContainer>
+      </Hidden>
+      <StyledOnboardingNavigationBarProgressBar className={classes.box}>
         <div></div>
         {progressItemArray.map(item => (
           <OnboardingProgressItem

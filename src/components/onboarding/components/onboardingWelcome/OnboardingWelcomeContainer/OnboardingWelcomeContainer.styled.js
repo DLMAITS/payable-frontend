@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 const { darkBlue } = colors;
 
 const StyledGridContainer = styled(Grid)`
-  height: 650px;
+  height: 700px;
 `;
 
 const DarkBlueGridItem = styled(Grid)`

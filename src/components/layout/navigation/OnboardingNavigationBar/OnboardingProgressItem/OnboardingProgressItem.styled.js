@@ -1,5 +1,14 @@
 import styled from "styled-components";
 import { colors, fonts } from "../../../../../utils/styles/helper";
+import { makeStyles } from "@material-ui/core";
+
+const useStyles = makeStyles(theme => ({
+  number: {
+    [theme.breakpoints.down("sm")]: {
+      lineHeight: "100px"
+    }
+  }
+}));
 
 const { fontFamily } = fonts;
 const { darkBlue, lightBlue } = colors;
@@ -14,4 +23,4 @@ const StyledOnboardingProgressItemElement = styled.div`
   color: ${props => (props.isSelected ? darkBlue : lightBlue)};
 `;
 
-export { StyledOnboardingProgressItemElement };
+export { StyledOnboardingProgressItemElement, useStyles };

@@ -12,7 +12,7 @@ const OnboardingWelcomeContainer = () => {
   const classes = useStyles();
   return (
     <Fragment>
-      <Box mt={3} boxShadow={10} m="auto" className={classes.box}>
+      <Box mt={2} boxShadow={10} m="auto" className={classes.box}>
         <StyledGridContainer container align="center" justify="center">
           <Grid item xs={12} sm={12} md={6}>
             <DetailsContainer />
