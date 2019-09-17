@@ -9,6 +9,10 @@ import {
 } from "./DetailsContainer.styled";
 import { DarkBlueTextField } from "../../../../layout/textfields/DarkBlueTextField/DarkBlueTextField";
 import { SubmitButton } from "../../../../layout/buttons/SubmitButton/SubmitButton";
+import { IconButton } from "@material-ui/core";
+import { InputAdornment } from "@material-ui/core";
+import { Visibility } from "@material-ui/icons";
+import { VisibilityOff } from "@material-ui/icons";
 
 const DetailsContainer = ({ history }) => {
   const [formData, setFormData] = useState({
@@ -17,7 +21,8 @@ const DetailsContainer = ({ history }) => {
     lastName: "",
     email: "",
     password: "",
-    phoneNumber: ""
+    phoneNumber: "",
+    showPassword: false
   });
 
   const {
@@ -26,7 +31,8 @@ const DetailsContainer = ({ history }) => {
     lastName,
     email,
     password,
-    phoneNumber
+    phoneNumber,
+    showPassword
   } = formData;
 
   const onChange = e => {
@@ -46,6 +52,14 @@ const DetailsContainer = ({ history }) => {
     }
     */
     history.push("/onboarding/company");
+  };
+
+  const handleShowClickPassword = () => {
+    setFormData({ ...formData, showPassword: !showPassword });
+  };
+
+  const handleMouseDownPassword = e => {
+    e.preventDefault();
   };
 
   return (
@@ -111,11 +125,26 @@ const DetailsContainer = ({ history }) => {
             label="Password"
             margin="normal"
             width="80%"
-            type="password"
+            type={showPassword ? "text" : "password"}
             name="password"
             value={password}
             onChange={e => onChange(e)}
             helperText="At least 8 characters"
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <IconButton
+                    edge="end"
+                    aria-label="toggle password visibility"
+                    onClick={handleShowClickPassword}
+                    onMouseDown={handleMouseDownPassword}
+                    style={{ backgroundColor: "transparent" }}
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
+              )
+            }}
           />
         </div>
         <div>
