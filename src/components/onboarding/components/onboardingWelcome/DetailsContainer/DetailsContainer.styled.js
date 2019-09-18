@@ -2,19 +2,9 @@ import styled from "styled-components";
 import { StyledBaseText } from "../../../../layout/text/BaseText/BaseText.styled";
 import { colors } from "../../../../../utils/styles/helper";
 import { Link } from "react-router-dom";
-import { DarkBlueTextField } from "../../../../layout/textfields/DarkBlueTextField/DarkBlueTextField";
+import DarkBlueTextField from "../../../../layout/textfields/DarkBlueTextField/DarkBlueTextField";
 
 const { darkBlue, grey } = colors;
-
-const StyledMainTitle = styled(StyledBaseText)`
-  && {
-    line-height: 30px;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 30px;
-    color: ${darkBlue};
-  }
-`;
 
 const StyledSubTitle = styled(StyledBaseText)`
   line-height: 15px;
@@ -49,7 +39,6 @@ const StyledDarkBlueTextField = styled(DarkBlueTextField)`
 `;
 
 export {
-  StyledMainTitle,
   StyledSubTitle,
   StyledRequiredOptionsText,
   StyleTermsAndConditionsText,

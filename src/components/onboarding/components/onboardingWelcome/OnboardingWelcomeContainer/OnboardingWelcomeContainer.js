@@ -1,29 +1,27 @@
 import React, { Fragment } from "react";
-import { Grid, Box, Hidden } from "@material-ui/core";
+import { Grid, Hidden } from "@material-ui/core";
 import DetailsContainer from "../DetailsContainer/DetailsContainer";
 import InfoContainer from "../InfoContainer/InfoContainer";
-import {
-  StyledGridContainer,
-  DarkBlueGridItem,
-  useStyles
-} from "./OnboardingWelcomeContainer.styled";
+import { DarkBlueGridItem } from "./OnboardingWelcomeContainer.styled";
+import OnboardingBox from "../../../../layout/boxes/OnboardingBox/OnboardingBox";
+import { stylingConfig } from "./OnboardingWelcomeContainer.styled";
+import OnboardingGridContainer from "../../../../layout/grids/OnboardingGridContainer/OnboardingGridContainer";
 
 const OnboardingWelcomeContainer = () => {
-  const classes = useStyles();
   return (
     <Fragment>
-      <Box mt={2} mb={2} boxShadow={10} m="auto" className={classes.box}>
-        <StyledGridContainer container align="center" justify="center">
-          <Grid item xs={12} sm={12} md={6}>
+      <OnboardingBox {...stylingConfig.box}>
+        <OnboardingGridContainer>
+          <Grid {...stylingConfig.gridItem}>
             <DetailsContainer />
           </Grid>
-          <Hidden smDown>
-            <DarkBlueGridItem item md={6}>
+          <Hidden {...stylingConfig.hidden}>
+            <DarkBlueGridItem {...stylingConfig.darkBlueGridItem}>
               <InfoContainer />
             </DarkBlueGridItem>
           </Hidden>
-        </StyledGridContainer>
-      </Box>
+        </OnboardingGridContainer>
+      </OnboardingBox>
     </Fragment>
   );
 };

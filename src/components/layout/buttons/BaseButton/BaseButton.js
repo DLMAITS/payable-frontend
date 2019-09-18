@@ -20,4 +20,4 @@ const BaseButton = styled(Button)`
   }
 `;
 
-export { BaseButton };
+export default BaseButton;

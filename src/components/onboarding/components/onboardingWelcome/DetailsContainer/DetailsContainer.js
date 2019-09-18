@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import {
-  StyledMainTitle,
   StyledSubTitle,
   StyledRequiredOptionsText,
   StyleTermsAndConditionsText,
   StyledTermsAndConditionsHyperlink
 } from "./DetailsContainer.styled";
-import { DarkBlueTextField } from "../../../../layout/textfields/DarkBlueTextField/DarkBlueTextField";
-import { SubmitButton } from "../../../../layout/buttons/SubmitButton/SubmitButton";
-import { IconButton } from "@material-ui/core";
-import { InputAdornment } from "@material-ui/core";
-import { Visibility } from "@material-ui/icons";
-import { VisibilityOff } from "@material-ui/icons";
+import OnboardingTitleText from "../../../../layout/text/OnboardingTitleText/OnboardingTitleText";
+import DarkBlueTextField from "../../../../layout/textfields/DarkBlueTextField/DarkBlueTextField";
+import SubmitButton from "../../../../layout/buttons/SubmitButton/SubmitButton";
+import IconButton from "@material-ui/core/IconButton";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import Visibility from "@material-ui/icons/Visibility";
+import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import ThreeDotsSpinner from "../../../../layout/spinners/ThreeDotsSpinner";
 
 const DetailsContainer = ({ history }) => {
@@ -49,7 +49,7 @@ const DetailsContainer = ({ history }) => {
     }
     */
 
-    //history.push("/onboarding/company");
+    history.push("/onboarding/company");
   };
 
   const handleShowClickPassword = () => {
@@ -63,7 +63,7 @@ const DetailsContainer = ({ history }) => {
   return (
     <div>
       <div>
-        <StyledMainTitle>Let's get started</StyledMainTitle>
+        <OnboardingTitleText>Let's get started</OnboardingTitleText>
         <StyledSubTitle>
           No hidden fees. Working capital made simple
         </StyledSubTitle>

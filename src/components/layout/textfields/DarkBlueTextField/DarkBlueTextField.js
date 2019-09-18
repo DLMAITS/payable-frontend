@@ -25,4 +25,4 @@ const DarkBlueTextField = styled(DarkBlueTextFieldBase)`
   width: ${props => props.width};
 `;
 
-export { DarkBlueTextField };
+export default DarkBlueTextField;

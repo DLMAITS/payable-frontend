@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledDividerLineLight } from "./DividerLineLight.styled";
+import StyledDividerLineLight from "./DividerLineLight.styled";
 
 const DividerLineLight = () => {
   return <StyledDividerLineLight></StyledDividerLineLight>;

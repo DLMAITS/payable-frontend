@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../../../utils/styles/helper";
-import { BaseButton } from "../BaseButton/BaseButton";
+import BaseButton from "../BaseButton/BaseButton";
 
 const { green, darkGreen } = colors;
 
@@ -16,4 +16,4 @@ const SubmitButton = styled(BaseButton)`
   }
 `;
 
-export { SubmitButton };
+export default SubmitButton;

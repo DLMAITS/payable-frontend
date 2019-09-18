@@ -11,4 +11,4 @@ const StyledDividerLineLight = styled.div`
   align-content: center;
 `;
 
-export { StyledDividerLineLight };
+export default StyledDividerLineLight;
