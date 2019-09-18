@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import OnboardingProgressItem from "./OnboardingProgressItem/OnboardingProgressItem";
 import { withRouter } from "react-router-dom";
 import {
   ONBOARDINGWELCOMEROUTE,
@@ -10,44 +9,15 @@ import {
 import {
   StyledOnboardingNavigationBarContainer,
   StyledOnboardingNavigationBarLogoContainer,
-  StyledOnboardingNavigationBarLogo,
-  StyledOnboardingNavigationBarProgressBar,
-  useStyles
+  StyledOnboardingNavigationBarLogo
 } from "./OnboardingNavigationBar.styled";
 import { Hidden } from "@material-ui/core";
 
+import OnboardingNavigationStepper from "../OnboardingNavigationStepper/OnboardingNavigationStepper";
+
 const OnboardingNavigationBar = ({ history }) => {
   const path = history.location.pathname;
-
-  const [progressState, setProgressState] = useState({
-    highlightedState: ""
-  });
-
-  const ROW = "row";
-  const TEXT = "text";
-
-  const progressItemArray = [
-    {
-      row: 0,
-      text: "Get Started",
-      paths: [ONBOARDINGWELCOMEROUTE]
-    },
-    {
-      row: 1,
-      text: "Company",
-      paths: [ONBOARDINGCOMPANYROUTE]
-    },
-    {
-      row: 2,
-      text: "Details",
-      paths: [ONBOARDINGCOMPANYCHECKSROUTE]
-    },
-    {
-      row: 3,
-      text: "Finalise",
-      paths: [ONBOARDINGACCOUNTSETUPROUTE]
-    }
-  ];
+  const [progressNumber, setProgressNumber] = useState(0);
 
   useEffect(() => {
     var adjustedPath;
@@ -57,10 +27,23 @@ const OnboardingNavigationBar = ({ history }) => {
       adjustedPath = path;
     }
 
-    setProgressState({ highlightedState: adjustedPath });
-  }, [path, setProgressState]);
-
-  const classes = useStyles();
+    switch (adjustedPath) {
+      case ONBOARDINGWELCOMEROUTE:
+        setProgressNumber(0);
+        return;
+      case ONBOARDINGCOMPANYROUTE:
+        setProgressNumber(1);
+        return;
+      case ONBOARDINGCOMPANYCHECKSROUTE:
+        setProgressNumber(2);
+        return;
+      case ONBOARDINGACCOUNTSETUPROUTE:
+        setProgressNumber(3);
+        return;
+      default:
+        setProgressNumber(0);
+    }
+  }, [path, setProgressNumber]);
 
   return (
     <StyledOnboardingNavigationBarContainer>
@@ -69,21 +52,7 @@ const OnboardingNavigationBar = ({ history }) => {
           <StyledOnboardingNavigationBarLogo />
         </StyledOnboardingNavigationBarLogoContainer>
       </Hidden>
-      <StyledOnboardingNavigationBarProgressBar className={classes.box}>
-        {progressItemArray.map(item => (
-          <OnboardingProgressItem
-            key={item[ROW]}
-            itemNumber={item[ROW] + 1}
-            itemText={item[TEXT]}
-            isSelected={
-              item.paths.filter(path => path === progressState.highlightedState)
-                .length > 0
-                ? true
-                : false
-            }
-          />
-        ))}
-      </StyledOnboardingNavigationBarProgressBar>
+      <OnboardingNavigationStepper activeNumber={progressNumber} />
     </StyledOnboardingNavigationBarContainer>
   );
 };
