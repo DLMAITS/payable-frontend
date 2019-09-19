@@ -9,30 +9,74 @@ import LightBlueSwitch from "../../../../layout/switches/LightBlueSwitch/LightBl
 import CurrencyTextField from "../../../../layout/textfields/CurrencyTextField/CurrencyTextField";
 import StyledButton from "../../../../layout/buttons/StyledButton/StyledButton";
 import DarkBlueHyperlink from "../../../../layout/text/DarkBlueHyperlink/DarkBlueHyperlink";
+import ThreeDotsSpinner from "../../../../layout/spinners/ThreeDotsSpinner";
 
 const CompanyContainer = () => {
-  const [isVatRegistered, setIsVatRegistered] = useState(false);
-  const [isWebsite, setIsWebsite] = useState(false);
-  const [isTradingAddressDifferent, setIsTradingAddressDifferent] = useState(
-    false
-  );
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    companyRegisteredAddress: "",
+    isVatRegistered: false,
+    companyVatRegistrationNumber: "",
+    isWebsite: false,
+    companyWebsite: "",
+    isTradingAddressDifferent: false,
+    companyTradingAddress: "",
+    fundingLimit: 0.0,
+    agreesToDataProcessing: false
+  });
+
+  const {
+    companyRegisteredAddress,
+    isVatRegistered,
+    companyVatRegistrationNumber,
+    isWebsite,
+    companyWebsite,
+    isTradingAddressDifferent,
+    companyTradingAddress,
+    fundingLimit,
+    agreesToDataProcessing
+  } = formData;
 
   const handleIsVatRegistrationCheckBoxTicked = e => {
-    setIsVatRegistered(!isVatRegistered);
+    setFormData({ ...formData, isVatRegistered: !isVatRegistered });
   };
 
   const handleIsWebsiteCheckBoxTicked = e => {
-    setIsWebsite(!isWebsite);
+    setFormData({ ...formData, isWebsite: !isWebsite });
   };
 
   const handleIsTradingAddressDifferentCheckBoxTicked = e => {
-    setIsTradingAddressDifferent(!isTradingAddressDifferent);
+    setFormData({
+      ...formData,
+      isTradingAddressDifferent: !isTradingAddressDifferent
+    });
+  };
+
+  const handleAgreesToDataProcessing = e => {
+    setFormData({
+      ...formData,
+      agreesToDataProcessing: !agreesToDataProcessing
+    });
+  };
+
+  const onChange = e => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const onSubmit = async e => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    // TODO
   };
 
   return (
     <OnboardingBox {...styledConfig.boxContainer}>
       <OnboardingTitleText>Company Details</OnboardingTitleText>
-      <form autoComplete="off">
+      <form autoComplete="off" onSubmit={e => onSubmit(e)}>
         <DarkBlueTextField
           id="company-name"
           label="AITS TECHNOLOGY LTD."
@@ -49,6 +93,8 @@ const CompanyContainer = () => {
           name="companyRegisteredAddress"
           rowsMax="4"
           multiline
+          value={companyRegisteredAddress}
+          onChange={e => onChange(e)}
         />
         <div {...styledConfig.switchHoldContainer}>
           <Typography component="div">
@@ -72,6 +118,8 @@ const CompanyContainer = () => {
             margin="normal"
             width="80%"
             name="companyVatRegistrationNumber"
+            value={companyVatRegistrationNumber}
+            onChange={e => onChange(e)}
           />
         )}
         <div {...styledConfig.switchHoldContainer}>
@@ -96,6 +144,8 @@ const CompanyContainer = () => {
             margin="normal"
             width="80%"
             name="companyWebsite"
+            value={companyWebsite}
+            onChange={e => onChange(e)}
           />
         )}
         <div {...styledConfig.switchHoldContainer}>
@@ -126,6 +176,8 @@ const CompanyContainer = () => {
             name="companyTradingAddress"
             rowsMax="4"
             multiline
+            value={companyTradingAddress}
+            onChange={e => onChange(e)}
           />
         )}
         <CurrencyTextField
@@ -133,6 +185,9 @@ const CompanyContainer = () => {
           width="80%"
           currency="£"
           marginTop="40px"
+          name="fundingLimit"
+          value={fundingLimit}
+          onChange={e => onChange(e)}
         />
         <div {...styledConfig.dataRightsHoldContainer}>
           <Typography component="div">
@@ -143,7 +198,10 @@ const CompanyContainer = () => {
               </Grid>
               <Grid item>No</Grid>
               <Grid item>
-                <LightBlueSwitch />
+                <LightBlueSwitch
+                  onChange={e => handleAgreesToDataProcessing(e)}
+                  checked={agreesToDataProcessing}
+                />
               </Grid>
               <Grid item>Yes</Grid>
             </Grid>
@@ -155,9 +213,13 @@ const CompanyContainer = () => {
           width="60%"
           mt="30px"
           type="submit"
+          disabled={isLoading}
         >
-          Please wait
+          {isLoading ? "Please wait" : "Next"}
         </StyledButton>
+        {isLoading && (
+          <ThreeDotsSpinner height={30} width={30}></ThreeDotsSpinner>
+        )}
       </form>
     </OnboardingBox>
   );
