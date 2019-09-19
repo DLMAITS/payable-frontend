@@ -21,6 +21,19 @@ const styledConfig = {
   websiteGridItem: {
     item: true,
     style: { marginRight: "30px" }
+  },
+  registeredGridItemText: {
+    style: { width: "100%", marginLeft: "9px", marginTop: "10px" }
+  },
+  registeredGridItemSwitch: {
+    style: { marginLeft: "9px" }
+  },
+  processingDataLabel: {
+    style: { align: "left" }
+  },
+  dataRightsHoldContainer: {
+    align: "left",
+    style: { marginLeft: "10%", marginTop: "40px" }
   }
 };
 

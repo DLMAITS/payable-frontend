@@ -3,17 +3,17 @@ import { withRouter } from "react-router-dom";
 import {
   StyledSubTitle,
   StyledRequiredOptionsText,
-  StyleTermsAndConditionsText,
-  StyledTermsAndConditionsHyperlink
+  StyleTermsAndConditionsText
 } from "./DetailsContainer.styled";
 import OnboardingTitleText from "../../../../layout/text/OnboardingTitleText/OnboardingTitleText";
 import DarkBlueTextField from "../../../../layout/textfields/DarkBlueTextField/DarkBlueTextField";
-import SubmitButton from "../../../../layout/buttons/SubmitButton/SubmitButton";
+import StyledButton from "../../../../layout/buttons/StyledButton/StyledButton";
 import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import ThreeDotsSpinner from "../../../../layout/spinners/ThreeDotsSpinner";
+import DarkBlueHyperlink from "../../../../layout/text/DarkBlueHyperlink/DarkBlueHyperlink";
 
 const DetailsContainer = ({ history }) => {
   const [formData, setFormData] = useState({
@@ -145,11 +145,9 @@ const DetailsContainer = ({ history }) => {
         </div>
         <StyleTermsAndConditionsText>
           <span>By creating an account, you agree to our </span>
-          <StyledTermsAndConditionsHyperlink to="#">
-            Terms and Conditions
-          </StyledTermsAndConditionsHyperlink>
+          <DarkBlueHyperlink to="#">Terms and Conditions</DarkBlueHyperlink>
         </StyleTermsAndConditionsText>
-        <SubmitButton
+        <StyledButton
           variant="contained"
           color="primary"
           width="60%"
@@ -158,7 +156,7 @@ const DetailsContainer = ({ history }) => {
           disabled={isLoading}
         >
           {isLoading ? "Please wait" : "Create account"}
-        </SubmitButton>
+        </StyledButton>
         {isLoading && <ThreeDotsSpinner height={30} width={30} />}
       </form>
     </div>

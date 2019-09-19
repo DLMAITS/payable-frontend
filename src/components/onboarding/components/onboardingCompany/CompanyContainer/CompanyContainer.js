@@ -6,10 +6,16 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import { styledConfig } from "./CompanyContainer.styled";
 import LightBlueSwitch from "../../../../layout/switches/LightBlueSwitch/LightBlueSwitch";
+import CurrencyTextField from "../../../../layout/textfields/CurrencyTextField/CurrencyTextField";
+import StyledButton from "../../../../layout/buttons/StyledButton/StyledButton";
+import DarkBlueHyperlink from "../../../../layout/text/DarkBlueHyperlink/DarkBlueHyperlink";
 
 const CompanyContainer = () => {
   const [isVatRegistered, setIsVatRegistered] = useState(false);
   const [isWebsite, setIsWebsite] = useState(false);
+  const [isTradingAddressDifferent, setIsTradingAddressDifferent] = useState(
+    false
+  );
 
   const handleIsVatRegistrationCheckBoxTicked = e => {
     setIsVatRegistered(!isVatRegistered);
@@ -17,6 +23,10 @@ const CompanyContainer = () => {
 
   const handleIsWebsiteCheckBoxTicked = e => {
     setIsWebsite(!isWebsite);
+  };
+
+  const handleIsTradingAddressDifferentCheckBoxTicked = e => {
+    setIsTradingAddressDifferent(!isTradingAddressDifferent);
   };
 
   return (
@@ -32,11 +42,11 @@ const CompanyContainer = () => {
           disabled
         />
         <DarkBlueTextField
-          id="company-address"
+          id="company-registered-address"
           label="Company registered address"
           margin="normal"
           width="80%"
-          name="companyAddress"
+          name="companyRegisteredAddress"
           rowsMax="4"
           multiline
         />
@@ -88,9 +98,71 @@ const CompanyContainer = () => {
             name="companyWebsite"
           />
         )}
+        <div {...styledConfig.switchHoldContainer}>
+          <Typography component="div">
+            <Grid {...styledConfig.switchGridContainer}>
+              <Grid {...styledConfig.registeredGridItemText}>
+                Trading address same as registered address?
+              </Grid>
+              <Grid item>No</Grid>
+              <Grid item>
+                <LightBlueSwitch
+                  onChange={e =>
+                    handleIsTradingAddressDifferentCheckBoxTicked(e)
+                  }
+                  checked={isTradingAddressDifferent}
+                />
+              </Grid>
+              <Grid item>Yes</Grid>
+            </Grid>
+          </Typography>
+        </div>
+        {isTradingAddressDifferent && (
+          <DarkBlueTextField
+            id="company-trading-address"
+            label="Company trading address"
+            margin="normal"
+            width="80%"
+            name="companyTradingAddress"
+            rowsMax="4"
+            multiline
+          />
+        )}
+        <CurrencyTextField
+          labelText="How much funding would you be looking for?"
+          width="80%"
+          currency="£"
+          marginTop="40px"
+        />
+        <div {...styledConfig.dataRightsHoldContainer}>
+          <Typography component="div">
+            <Grid {...styledConfig.switchGridContainer}>
+              <Grid {...styledConfig.websiteGridItem}>
+                Do you agree to let us process data along these{" "}
+                <DarkBlueHyperlink to="#">guidelines</DarkBlueHyperlink>?
+              </Grid>
+              <Grid item>No</Grid>
+              <Grid item>
+                <LightBlueSwitch />
+              </Grid>
+              <Grid item>Yes</Grid>
+            </Grid>
+          </Typography>
+        </div>
+        <StyledButton
+          variant="contained"
+          color="primary"
+          width="60%"
+          mt="30px"
+          type="submit"
+        >
+          Please wait
+        </StyledButton>
       </form>
     </OnboardingBox>
   );
 };
 
 export default CompanyContainer;
+
+// {isLoading ? "Please wait" : "Create account"}

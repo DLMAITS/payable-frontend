@@ -4,7 +4,7 @@ import BaseButton from "../BaseButton/BaseButton";
 
 const { green, darkGreen } = colors;
 
-const SubmitButton = styled(BaseButton)`
+const StyledButton = styled(BaseButton)`
   && {
     color: white;
     background-color: ${green};
@@ -16,4 +16,4 @@ const SubmitButton = styled(BaseButton)`
   }
 `;
 
-export default SubmitButton;
+export default StyledButton;
