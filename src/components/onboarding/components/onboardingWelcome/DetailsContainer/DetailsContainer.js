@@ -14,6 +14,7 @@ import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import ThreeDotsSpinner from "../../../../layout/spinners/ThreeDotsSpinner";
 import DarkBlueHyperlink from "../../../../layout/text/DarkBlueHyperlink/DarkBlueHyperlink";
+import { ONBOARDINGCOMPANYROUTE } from "../../../../../constants/Constants";
 
 const DetailsContainer = ({ history }) => {
   const [formData, setFormData] = useState({
@@ -49,7 +50,7 @@ const DetailsContainer = ({ history }) => {
     }
     */
 
-    history.push("/onboarding/company");
+    history.push(ONBOARDINGCOMPANYROUTE);
   };
 
   const handleShowClickPassword = () => {

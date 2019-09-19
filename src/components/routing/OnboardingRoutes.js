@@ -7,7 +7,7 @@ import OnboardingAccountSetupContainer from "../onboarding/components/onboarding
 import {
   ONBOARDINGWELCOMEROUTE,
   ONBOARDINGCOMPANYROUTE,
-  ONBOARDINGCOMPANYCHECKSROUTE,
+  ONBOARDINGCOMPANYFINANCIALSROUTE,
   ONBOARDINGACCOUNTSETUPROUTE
 } from "../../constants/Constants";
 
@@ -27,7 +27,7 @@ const OnboardingRoutes = () => {
         />
         <Route
           exact
-          path={ONBOARDINGCOMPANYCHECKSROUTE}
+          path={ONBOARDINGCOMPANYFINANCIALSROUTE}
           component={OnboardingCompanyChecksContainer}
         />
         <Route

@@ -1,0 +1,13 @@
+const styledConfig = {
+  divSpace: {
+    marginTop: "40px"
+  },
+  onboardingCard: {
+    width: "80%",
+    paddingLeft: "5px",
+    paddingRight: "5px",
+    marginTop: "20px"
+  }
+};
+
+export { styledConfig };

@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import {
   ONBOARDINGWELCOMEROUTE,
   ONBOARDINGCOMPANYROUTE,
-  ONBOARDINGCOMPANYCHECKSROUTE,
+  ONBOARDINGCOMPANYFINANCIALSROUTE,
   ONBOARDINGACCOUNTSETUPROUTE
 } from "../../../../constants/Constants";
 import {
@@ -34,7 +34,7 @@ const OnboardingNavigationBar = ({ history }) => {
       case ONBOARDINGCOMPANYROUTE:
         setProgressNumber(1);
         return;
-      case ONBOARDINGCOMPANYCHECKSROUTE:
+      case ONBOARDINGCOMPANYFINANCIALSROUTE:
         setProgressNumber(2);
         return;
       case ONBOARDINGACCOUNTSETUPROUTE:

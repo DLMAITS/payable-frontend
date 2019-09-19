@@ -4,6 +4,7 @@ import OnboardingGridContainer from "../../../../layout/grids/OnboardingGridCont
 import styledConfig from "./OnboardingCompanyContainer.styled";
 import Grid from "@material-ui/core/Grid";
 import CompanyContainer from "../CompanyContainer/CompanyContainer";
+import InfoContainer from "../InfoContainer/InfoContainer";
 
 const OnboardingCompanyContainer = () => {
   return (
@@ -13,7 +14,9 @@ const OnboardingCompanyContainer = () => {
           <Grid {...styledConfig.gridItem}>
             <CompanyContainer />
           </Grid>
-          <Grid {...styledConfig.gridItem}></Grid>
+          <Grid {...styledConfig.gridItem}>
+            <InfoContainer />
+          </Grid>
         </OnboardingGridContainer>
       </OnboardingBox>
     </Fragment>

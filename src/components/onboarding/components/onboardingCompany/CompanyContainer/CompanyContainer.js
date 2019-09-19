@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
 import OnboardingBox from "../../../../layout/boxes/OnboardingBox/OnboardingBox";
 import OnboardingTitleText from "../../../../layout/text/OnboardingTitleText/OnboardingTitleText";
 import DarkBlueTextField from "../../../../layout/textfields/DarkBlueTextField/DarkBlueTextField";
@@ -10,8 +11,9 @@ import CurrencyTextField from "../../../../layout/textfields/CurrencyTextField/C
 import StyledButton from "../../../../layout/buttons/StyledButton/StyledButton";
 import DarkBlueHyperlink from "../../../../layout/text/DarkBlueHyperlink/DarkBlueHyperlink";
 import ThreeDotsSpinner from "../../../../layout/spinners/ThreeDotsSpinner";
+import { ONBOARDINGCOMPANYFINANCIALSROUTE } from "../../../../../constants/Constants";
 
-const CompanyContainer = () => {
+const CompanyContainer = ({ history }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     companyRegisteredAddress: "",
@@ -70,7 +72,13 @@ const CompanyContainer = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // TODO
+    /* TODO
+    if (isAuthenticated) {
+        history.push('/onboarding/company-financials)
+    }
+    */
+
+    history.push(ONBOARDINGCOMPANYFINANCIALSROUTE);
   };
 
   return (
@@ -225,6 +233,4 @@ const CompanyContainer = () => {
   );
 };
 
-export default CompanyContainer;
-
-// {isLoading ? "Please wait" : "Create account"}
+export default withRouter(CompanyContainer);
