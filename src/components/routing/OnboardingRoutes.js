@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Switch, Route } from "react-router-dom";
 import OnboardingWelcomeContainer from "../onboarding/components/onboardingWelcome/OnboardingWelcomeContainer/OnboardingWelcomeContainer";
 import OnboardingCompanyContainer from "../onboarding/components/onboardingCompany/OnboardingCompanyContainer/OnboardingCompanyContainer";
-import OnboardingCompanyChecksContainer from "../onboarding/components/onboardingCompanyChecks/OnboardingCompanyChecksContainer/OnboardingCompanyChecksContainer";
+import OnboardingCompanyFinancialsContainer from "../onboarding/components/onboardingCompanyFinancials/OnboardingCompanyFinancialsContainer/OnboardingCompanyFinancialsContainer";
 import OnboardingAccountSetupContainer from "../onboarding/components/onboardingAccountSetup/OnboardingAccountSetupContainer/OnboardingAccountSetupContainer";
 import {
   ONBOARDINGWELCOMEROUTE,
@@ -28,7 +28,7 @@ const OnboardingRoutes = () => {
         <Route
           exact
           path={ONBOARDINGCOMPANYFINANCIALSROUTE}
-          component={OnboardingCompanyChecksContainer}
+          component={OnboardingCompanyFinancialsContainer}
         />
         <Route
           exact

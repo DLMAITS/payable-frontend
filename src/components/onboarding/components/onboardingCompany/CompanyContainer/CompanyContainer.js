@@ -13,6 +13,8 @@ import DarkBlueHyperlink from "../../../../layout/text/DarkBlueHyperlink/DarkBlu
 import ThreeDotsSpinner from "../../../../layout/spinners/ThreeDotsSpinner";
 import { ONBOARDINGCOMPANYFINANCIALSROUTE } from "../../../../../constants/Constants";
 
+// TODO -> add the 'what kind of company are you'
+
 const CompanyContainer = ({ history }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({

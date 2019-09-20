@@ -6,7 +6,7 @@ const styledConfig = {
     width: "80%",
     paddingLeft: "5px",
     paddingRight: "5px",
-    marginTop: "20px"
+    marginTop: "40px"
   }
 };
 

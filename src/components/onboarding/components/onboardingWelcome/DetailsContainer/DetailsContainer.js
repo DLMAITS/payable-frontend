@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
 import {
-  StyledSubTitle,
   StyledRequiredOptionsText,
   StyleTermsAndConditionsText
 } from "./DetailsContainer.styled";
 import OnboardingTitleText from "../../../../layout/text/OnboardingTitleText/OnboardingTitleText";
+import OnboardingSubTitleText from "../../../../layout/text/OnboardingSubTitleText/OnboardingSubTitleText";
 import DarkBlueTextField from "../../../../layout/textfields/DarkBlueTextField/DarkBlueTextField";
 import StyledButton from "../../../../layout/buttons/StyledButton/StyledButton";
 import IconButton from "@material-ui/core/IconButton";
@@ -65,9 +65,9 @@ const DetailsContainer = ({ history }) => {
     <div>
       <div>
         <OnboardingTitleText>Let's get started</OnboardingTitleText>
-        <StyledSubTitle>
+        <OnboardingSubTitleText>
           No hidden fees. Working capital made simple
-        </StyledSubTitle>
+        </OnboardingSubTitleText>
         <StyledRequiredOptionsText>
           * All fields are required
         </StyledRequiredOptionsText>
