@@ -6,11 +6,12 @@ const { grey } = colors;
 
 const OnboardingSubTitleText = styled(StyledBaseText)`
   && {
-    line-height: 15px;
+    line-height: 20px;
     text-align: center;
     font-size: 18px;
     padding-top: 20px;
     color: ${grey};
+    width: 80%;
   }
 `;
 

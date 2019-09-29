@@ -3,6 +3,7 @@ export const colors = {
   shadowTintedWhite: "#eeeded",
   darkBlue: "#25274d",
   lightBlue: "#a8d0e6",
+  midBlue: "#5784e5",
   white: "white",
   grey: "grey",
   green: "green",

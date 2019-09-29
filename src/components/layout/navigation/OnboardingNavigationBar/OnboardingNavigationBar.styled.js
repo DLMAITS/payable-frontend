@@ -32,7 +32,7 @@ const StyledOnboardingNavigationBarLogoContainer = styled.div`
   left: 0;
   display: inline-block;
   vertical-align: middle;
-  height: 100%;
+  height: 100px;
   padding-left: 40px;
   line-height: 100px;
 `;

@@ -7,11 +7,11 @@ const { green, darkGreen } = colors;
 const StyledButton = styled(BaseButton)`
   && {
     color: white;
-    background-color: ${green};
+    background-color: ${props => props.backgroundcolor || green};
     width: ${props => props.width};
     margin-top: ${props => props.mt};
     :hover {
-      background-color: ${darkGreen};
+      background-color: ${props => props.backgroundcoloronhover || darkGreen};
     }
   }
 `;

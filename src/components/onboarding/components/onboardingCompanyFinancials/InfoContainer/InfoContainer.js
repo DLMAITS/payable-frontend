@@ -5,24 +5,14 @@ import { styledConfig } from "./InfoContainer.styled";
 
 const itemsArray = [
   {
-    headingText: "Company addresses",
+    headingText: "Bank account",
     bodyText:
-      "We need to check that our customers are registered in the UK. Therefore we ask for both your trading and registered addresses"
+      "We collect information regarding types of transactions and historical & current cash balances to best decide on an appropriate funding level"
   },
   {
-    headingText: "VAT registration",
+    headingText: "Accounting information",
     bodyText:
-      "We collect VAT registration information to help determine the optimal and best funding options we can provide to you using our revolving credit facility"
-  },
-  {
-    headingText: "Company website",
-    bodyText:
-      "Your company website helps to provide more information about your business and therefore helps us to determine the best funding option for you"
-  },
-  {
-    headingText: "Funding limit",
-    bodyText:
-      "Tell us what you need! And we'll do our best to match, and in the vast majority of cases, exceed what you're looking for"
+      "We collect information regarding revenues, costs, and cash positions to be best decide on an appropriate funding level"
   }
 ];
 
