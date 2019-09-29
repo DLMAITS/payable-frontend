@@ -1,3 +1,7 @@
+An example project for building an onboarding flow and the dashboard structure for an SME payables financing solution. Uses React + @material-ui/core with styled-components
+
+No Redux or store added to this example at this stage
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
